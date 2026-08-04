@@ -2,6 +2,7 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Saldo</title>
 
@@ -9,8 +10,137 @@
   </head>
 
   <body>
-    <h1>Saldo</h1>
-    <p>Gestor de finanzas personales</p>
+    <header class="encabezado">
+      <div>
+        <h1>Saldo</h1>
+        <p>Gestor de finanzas personales</p>
+      </div>
+    </header>
+
+    <main class="contenedor">
+      <section class="resumen-financiero">
+        <article class="tarjeta tarjeta-saldo">
+          <h2>Saldo actual</h2>
+          <p id="saldo-total">$U 0</p>
+        </article>
+
+        <article class="tarjeta tarjeta-ingresos">
+          <h2>Ingresos</h2>
+          <p id="ingresos-total">$U 0</p>
+        </article>
+
+        <article class="tarjeta tarjeta-gastos">
+          <h2>Gastos</h2>
+          <p id="gastos-total">$U 0</p>
+        </article>
+      </section>
+
+      <section class="zona-principal">
+        <article class="panel">
+          <h2>Nuevo movimiento</h2>
+
+          <form id="formulario-movimiento">
+            <div class="campo">
+              <label for="tipo">Tipo</label>
+
+              <select id="tipo" name="tipo">
+                <option value="">Seleccionar tipo</option>
+                <option value="ingreso">Ingreso</option>
+                <option value="gasto">Gasto</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="descripcion">Descripción</label>
+
+              <input
+                type="text"
+                id="descripcion"
+                name="descripcion"
+                placeholder="Ejemplo: Supermercado"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="categoria">Categoría</label>
+
+              <select id="categoria" name="categoria">
+                <option value="">Seleccionar categoría</option>
+                <option value="Trabajo">Trabajo</option>
+                <option value="Vivienda">Vivienda</option>
+                <option value="Alimentación">Alimentación</option>
+                <option value="Transporte">Transporte</option>
+                <option value="Salud">Salud</option>
+                <option value="Educación">Educación</option>
+                <option value="Ocio">Ocio</option>
+                <option value="Otros">Otros</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="monto">Monto</label>
+
+              <input
+                type="number"
+                id="monto"
+                name="monto"
+                min="1"
+                placeholder="0"
+              />
+            </div>
+
+            <div class="campo">
+              <label for="fecha">Fecha</label>
+
+              <input type="date" id="fecha" name="fecha" />
+            </div>
+
+            <button type="submit">Guardar movimiento</button>
+          </form>
+        </article>
+
+        <article class="panel">
+          <h2>Gastos por categoría</h2>
+
+          <div id="resumen-categorias">
+            <p>No hay gastos registrados.</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="panel historial">
+        <div class="encabezado-historial">
+          <h2>Historial de movimientos</h2>
+
+          <div class="controles">
+            <div class="campo">
+              <label for="filtro-tipo">Mostrar</label>
+
+              <select id="filtro-tipo">
+                <option value="todos">Todos</option>
+                <option value="ingreso">Ingresos</option>
+                <option value="gasto">Gastos</option>
+              </select>
+            </div>
+
+            <div class="campo">
+              <label for="orden-movimientos">Ordenar</label>
+
+              <select id="orden-movimientos">
+                <option value="recientes">Más recientes</option>
+                <option value="antiguos">Más antiguos</option>
+                <option value="mayor-monto">Mayor monto</option>
+                <option value="menor-monto">Menor monto</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div id="lista-movimientos">
+          <p>Todavía no hay movimientos para mostrar.</p>
+        </div>
+      </section>
+    </main>
 
     <script src="./js/app.js"></script>
   </body>

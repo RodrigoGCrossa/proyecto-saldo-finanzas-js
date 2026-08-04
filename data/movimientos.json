@@ -1,0 +1,42 @@
+[
+  {
+    "id": 1,
+    "tipo": "ingreso",
+    "descripcion": "Sueldo",
+    "categoria": "Trabajo",
+    "monto": 75000,
+    "fecha": "2026-08-01"
+  },
+  {
+    "id": 2,
+    "tipo": "gasto",
+    "descripcion": "Alquiler",
+    "categoria": "Vivienda",
+    "monto": 22000,
+    "fecha": "2026-08-02"
+  },
+  {
+    "id": 3,
+    "tipo": "gasto",
+    "descripcion": "Supermercado",
+    "categoria": "Alimentación",
+    "monto": 8500,
+    "fecha": "2026-08-03"
+  },
+  {
+    "id": 4,
+    "tipo": "ingreso",
+    "descripcion": "Trabajo freelance",
+    "categoria": "Trabajo",
+    "monto": 7000,
+    "fecha": "2026-08-03"
+  },
+  {
+    "id": 5,
+    "tipo": "gasto",
+    "descripcion": "Gimnasio",
+    "categoria": "Salud",
+    "monto": 2200,
+    "fecha": "2026-08-04"
+  }
+]
