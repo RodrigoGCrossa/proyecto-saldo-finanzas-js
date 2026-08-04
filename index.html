@@ -12,8 +12,8 @@
   <body>
     <header class="encabezado">
       <div>
-        <h1>Saldo</h1>
-        <p>Gestor de finanzas personales</p>
+        <h1>CashFlow</h1>
+        <p>Control de ingresos y gastos desde un mismo lugar</p>
       </div>
     </header>
 
@@ -96,14 +96,28 @@
             </div>
 
             <button type="submit">Guardar movimiento</button>
+            <p id="mensaje-formulario"></p>
           </form>
         </article>
 
         <article class="panel">
-          <h2>Gastos por categoría</h2>
+          <h2>Resumen de actividad</h2>
 
-          <div id="resumen-categorias">
-            <p>No hay gastos registrados.</p>
+          <div class="estadisticas-actividad">
+            <p>
+              Movimientos registrados
+              <strong id="cantidad-movimientos">0</strong>
+            </p>
+
+            <p>
+              Ingresos registrados
+              <strong id="cantidad-ingresos">0</strong>
+            </p>
+
+            <p>
+              Gastos registrados
+              <strong id="cantidad-gastos">0</strong>
+            </p>
           </div>
         </article>
       </section>
@@ -129,8 +143,6 @@
               <select id="orden-movimientos">
                 <option value="recientes">Más recientes</option>
                 <option value="antiguos">Más antiguos</option>
-                <option value="mayor-monto">Mayor monto</option>
-                <option value="menor-monto">Menor monto</option>
               </select>
             </div>
           </div>
