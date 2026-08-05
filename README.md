@@ -2,6 +2,11 @@
 
 Aplicación web para registrar y visualizar ingresos y gastos personales.
 
+## Enlaces
+
+- Repositorio: https://github.com/RodrigoGCrossa/proyecto-saldo-finanzas-js
+- Demo: https://rodrigogcrossa.github.io/proyecto-saldo-finanzas-js/
+
 ## Descripción
 
 CashFlow permite agregar movimientos financieros, calcular automáticamente el saldo disponible y consultar un historial de ingresos y gastos.
