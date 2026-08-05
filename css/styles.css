@@ -124,14 +124,6 @@ button:hover {
   background-color: #6ee7b7;
 }
 
-/* Mensaje del formulario */
-
-#mensaje-formulario {
-  min-height: 20px;
-  margin: 12px 0 0;
-  color: #cbd5e1;
-}
-
 /* Resumen de actividad */
 
 .estadisticas-actividad {

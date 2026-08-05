@@ -4,8 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Saldo</title>
+    <title>CashFlow</title>
 
+    <!-- CSS de Toastify -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+
+    <!-- CSS propio -->
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
 
@@ -96,7 +104,6 @@
             </div>
 
             <button type="submit">Guardar movimiento</button>
-            <p id="mensaje-formulario"></p>
           </form>
         </article>
 
@@ -131,17 +138,20 @@
               <label for="filtro-tipo">Mostrar</label>
 
               <select id="filtro-tipo">
-                <option value="todos">Todos</option>
+                <option value="todos" selected>Todos</option>
+
                 <option value="ingreso">Ingresos</option>
+
                 <option value="gasto">Gastos</option>
               </select>
             </div>
 
             <div class="campo">
-              <label for="orden-movimientos">Ordenar</label>
+              <label for="orden-movimientos"> Ordenar </label>
 
               <select id="orden-movimientos">
-                <option value="recientes">Más recientes</option>
+                <option value="recientes" selected>Más recientes</option>
+
                 <option value="antiguos">Más antiguos</option>
               </select>
             </div>
@@ -154,6 +164,13 @@
       </section>
     </main>
 
+    <!-- JavaScript de Toastify -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+
+    <!-- JavaScript propio -->
     <script src="./js/app.js"></script>
   </body>
 </html>

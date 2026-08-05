@@ -7,7 +7,9 @@ const gastosTotal = document.getElementById("gastos-total");
 
 // Historial
 const listaMovimientos = document.getElementById("lista-movimientos");
+
 const filtroTipo = document.getElementById("filtro-tipo");
+
 const ordenMovimientos = document.getElementById("orden-movimientos");
 
 // Resumen de actividad
@@ -26,7 +28,26 @@ const categoriaInput = document.getElementById("categoria");
 const montoInput = document.getElementById("monto");
 const fechaInput = document.getElementById("fecha");
 
-const mensajeFormulario = document.getElementById("mensaje-formulario");
+// Mostrar una notificación con Toastify
+function mostrarNotificacion(texto, tipo) {
+  let colorFondo = "#059669";
+
+  if (tipo === "error") {
+    colorFondo = "#be123c";
+  }
+
+  Toastify({
+    text: texto,
+    duration: 3000,
+    close: true,
+    gravity: "top",
+    position: "right",
+    stopOnFocus: true,
+    style: {
+      background: colorFondo,
+    },
+  }).showToast();
+}
 
 // Cargar los movimientos iniciales desde el JSON
 async function cargarMovimientos() {
@@ -44,6 +65,8 @@ async function cargarMovimientos() {
   } catch (error) {
     listaMovimientos.textContent =
       "Ocurrió un error al cargar los movimientos.";
+
+    mostrarNotificacion("No se pudieron cargar los movimientos.", "error");
   }
 }
 
@@ -163,6 +186,7 @@ function agregarMovimiento(evento) {
 
   const tipo = tipoInput.value;
   const descripcion = descripcionInput.value.trim();
+
   const categoria = categoriaInput.value;
   const monto = Number(montoInput.value);
   const fecha = fechaInput.value;
@@ -174,7 +198,7 @@ function agregarMovimiento(evento) {
     monto <= 0 ||
     fecha === ""
   ) {
-    mensajeFormulario.textContent = "Completá correctamente todos los campos.";
+    mostrarNotificacion("Completá correctamente todos los campos.", "error");
 
     return;
   }
@@ -195,7 +219,7 @@ function agregarMovimiento(evento) {
 
   formularioMovimiento.reset();
 
-  mensajeFormulario.textContent = "Movimiento agregado correctamente.";
+  mostrarNotificacion("Movimiento agregado correctamente.", "exito");
 }
 
 // Eventos
